@@ -80,3 +80,6 @@ The final step is to incorporate the measure into a card on the dashboard and te
 The ability to seamlessly present financial data in multiple currencies is extremely important for global enterprises. From risk management strategies to compliance with government regulations and market research initiatives, this methodology addresses diverse financial needs. By implementing these structured steps, users can effortlessly navigate and analyse financial data across various currencies, fostering a more informed and precise decision-making process.
 
 Incorporate these techniques into your Power BI toolkit, empowering your organization to harness the true potential of multicurrency financial analysis.
+
++ Authors: [Daniel O’Leary]( https://github.com/DOLEARY85)
++ Created: 30.09.2023
