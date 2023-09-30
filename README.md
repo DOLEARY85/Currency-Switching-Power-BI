@@ -2,7 +2,7 @@
 
 **Introduction**
 
-Financial data integration in Power BI becomes intricately nuanced when dealing with diverse global currencies. While handling single-currency data within one country is straightforward, navigating the complexities of multiple currencies demands a strategic approach. In this blog, we delve into a systematic method for seamless multicurrency data display, empowering end users to effortlessly toggle between currencies directly from the dashboard.
+Financial data integration in Power BI becomes intricately nuanced when dealing with global currencies. While handling single-currency data within one country is straightforward, navigating the complexities of multiple currencies demands a strategic approach. In this blog, we delve into a systematic method for seamless multicurrency data display, empowering end users to effortlessly toggle between currencies directly from the dashboard.
 
 In our example, imagine a scenario where a European company's default currency is the Euro (EUR). The first crucial step is establishing EUR as the primary currency. 
 
