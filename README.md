@@ -2,9 +2,11 @@
 
 **Introduction**
 
-Financial data integration in Power BI becomes more intricate when dealing with global currencies. While handling single-currency data is straightforward, navigating the complexities of multiple currencies requires a strategic approach. In this blog, we delve into a systematic method for seamless multicurrency display, empowering end users to effortlessly toggle between currencies directly from the dashboard.
+Financial data integration in Power BI becomes more intricate when dealing with global currencies. While handling single-currency data is straightforward, navigating the complexities of multiple currencies requires a different approach. In this blog, we delve into a systematic method for seamless multicurrency display, empowering end users to effortlessly toggle between currencies directly from the dashboard.
 
-In our example, imagine a scenario where a European company with global offices recieves transactions in multiple currencies. Their default currency for reporting is the Euro (EUR) but every office needs to view the report in their local currency. The first crucial step in achieving this goal is establishing EUR as the primary currency. 
+For this example, imagine a scenario where a European company with global offices recieves transactions in multiple currencies. Their default currency for reporting is the Euro (EUR) but every office needs to view the report in their local currency. 
+
+The first crucial step in achieving our goal is establishing EUR as the primary currency. 
 
 **Creating a Single Currency**
 
@@ -12,13 +14,13 @@ Let’s start with our inputs, first the ‘Financial Data’ table. This exampl
 
 ![image](https://github.com/DOLEARY85/Currency-Switching-Power-BI/assets/126701906/3c779254-c435-4dd2-9803-b9a225291047)
 
-We’ll need to source the conversion rate details from primary currency to other currencies. In this example I only need EUR to GBP and EUR to USD.
+We’ll need to source the conversion rate details from primary currency (EUR) to other currencies. For this example I only need EUR to GBP and EUR to USD.
 
-So, we might end up with a currency table that looks like the below. As EUR is our primary currency it has been given a value of 1 as this will not need any conversion.
+So, we might end up with a currency table that looks like the below. As EUR is our primary currency and will not need any conversion, it has been given a value of 1.
 
 ![image](https://github.com/DOLEARY85/Currency-Switching-Power-BI/assets/126701906/4aeedf62-6a1f-465f-a6f0-3d3c58b66e0f)
 
-Now we have our conversion rates we need to create a field in our financial data that converts the Amount field to a single currency. For this we’ll leverage Power Query.
+Now we have our conversion rates, we next need to create a field in our financial data that converts the 'Amount' column to a single currency. For this we’ll leverage Power Query.
 
 The process involves using merging the 'Currency Table' with the 'Financial Data' through an inner join, linking the 'Currency Code' columns.
 
@@ -40,15 +42,15 @@ Now we have our ‘Amount’ column all in one currency (‘Amount in EUR’).
 
 **Creating a Dynamic Dashboard Element**
 
-Now we move on to the front end of our dashboard. Creating a dynamic currency selector that allows the end user to seamlessly switch between currencies. 
+To create a dynamic currency selector that allows the end user to seamlessly switch between currencies, We move to the front end of our dashboard. 
 
 First, we introduce a slicer, linked to the ‘Currency Code’ column from the ‘Currency Table’, to facilitate the currency switching.
 
 ![image](https://github.com/DOLEARY85/Currency-Switching-Power-BI/assets/126701906/98c59e6e-24ab-416c-b922-b83488bb906b)
 
-Now we can create measures that will use the slicer selection and the ‘Amount in EUR’ column we created in Power Query. 
+Now we can create measures that will use the selection from this slicer and the ‘Amount in EUR’ column we created in Power Query. 
 
-Imagine we needed to create a measure to calculate the total amount of all records:
+We'll demonstrate this with a simple measure, calculating the total amount of all records:
 
     Total Amount Selected Currency = 
     CALCULATE(
