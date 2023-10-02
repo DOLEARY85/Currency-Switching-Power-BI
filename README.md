@@ -41,33 +41,37 @@ Now we have our ‘Amount’ column all in one currency (‘Amount in EUR’).
 **Creating a Dynamic Dashboard Element**
 
 Now we move on to the front end of our dashboard. Creating a dynamic currency selector that allows the end user to seamlessly switch between currencies. 
-By creating a measure based on the values of the 'Currency Code' column from the ‘Currency Table’, users gain the ability to choose their preferred currency.
 
-    Selected Currency = values('Currency Table'[Currency Code])
+First, we introduce a slicer, linked to the ‘Currency Code’ column from the ‘Currency Table’, to facilitate the currency switching.
 
-Next, we introduce a slicer, linked to the ‘Currency Code’ column used in the measure, this will facilitate the effortless switching of currency directly on the dashboard.
- 
 ![image](https://github.com/DOLEARY85/Currency-Switching-Power-BI/assets/126701906/98c59e6e-24ab-416c-b922-b83488bb906b)
 
-Now we can create any measure and use the ‘Selected Currency’ measure we just created to change the currency type by employing the ‘SWITCH’ function. Let’s look at an example.
+Now we can create measures that will use the slicer selection and the ‘Amount in EUR’ column we created in Power Query. 
 
 Imagine we needed to create a measure to calculate the total amount of all records:
 
-    Total Amount Selected Currency = SWITCH(TRUE(),
-    [Selected Currency] = [Selected Currency],CALCULATE(SUM('Finance Data'[Amount in EUR]))*VALUES('Currency Table'[Conversion Rate]))
+  Total Amount Selected Currency = 
+  CALCULATE(
+      SUMX(
+          VALUES('Currency Table'[Currency Code]),
+          SUM('Finance Data'[Amount in EUR]) * VALUES('Currency Table'[Conversion Rate])
+      )
+  )
 
-Let’s examine this measure in more detail, the main section calculates the sum of the 'Amount in EUR' column.
 
-    CALCULATE(SUM('Finance Data'[Amount in EUR]))
+Let’s examine this measure in more detail:
 
-At the start of the measure, the ‘SWITCH’ function evaluates the main section of the measure where the sole true value is the 'Currency Code' selected in the 'Currency Table', this will come from our slicer.
+    VALUES('Currency Table'[Currency Code])
 
-    SWITCH(TRUE(),
-    [Selected Currency] = [Selected Currency],
+This function returns a single-column table that contains a unique list of 'Currency Code' values from the 'Currency Table'. It essentially provides a list of distinct currencies.
 
-The final section of the measure utilizes the currency chosen in the initial step to multiply the calculation by the conversion rate associated with it.
+    SUM('Finance Data'[Amount in EUR])
 
-    *VALUES('Currency Table'[Conversion Rate]))
+This part calculates the total sum of the 'Amount in EUR' column in the 'Finance Data' table.
+
+    SUMX(…,SUM('Finance Data'[Amount in EUR]) * VALUES('Currency Table'[Conversion Rate])))
+
+For each unique 'Currency Code', this expression calculates the total amount in the selected currency. It multiplies the total sum of 'Amount in EUR' by the corresponding 'Conversion Rate' for each currency, effectively converting the total amount to each currency.
 
 The final step is to incorporate the measure into a card on the dashboard and test it using our slicer.
 
