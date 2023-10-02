@@ -50,13 +50,13 @@ Now we can create measures that will use the slicer selection and the ‘Amount 
 
 Imagine we needed to create a measure to calculate the total amount of all records:
 
-  Total Amount Selected Currency = 
-  CALCULATE(
-      SUMX(
-          VALUES('Currency Table'[Currency Code]),
-          SUM('Finance Data'[Amount in EUR]) * VALUES('Currency Table'[Conversion Rate])
-      )
-  )
+    Total Amount Selected Currency = 
+    CALCULATE(
+        SUMX(
+            VALUES('Currency Table'[Currency Code]),
+            SUM('Finance Data'[Amount in EUR]) * VALUES('Currency Table'[Conversion Rate])
+        )
+    )
 
 
 Let’s examine this measure in more detail:
