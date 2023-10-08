@@ -88,4 +88,4 @@ The ability to seamlessly present financial data in multiple currencies is extre
 Incorporate these techniques into your Power BI toolkit to unlock the full potential of multicurrency financial analysis.
 
 + Authors: [Daniel O’Leary]( https://github.com/DOLEARY85)
-+ Created: 30.09.2023
++ Created: 09.10.2023
