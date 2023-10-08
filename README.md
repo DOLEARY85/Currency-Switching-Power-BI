@@ -73,7 +73,7 @@ This part calculates the total sum of the 'Amount in EUR' column in the 'Finance
 
     SUMX(…,SUM('Finance Data'[Amount in EUR]) * VALUES('Currency Table'[Conversion Rate])))
 
-The last part of our measure looks at each unique 'Currency Code' and calculates the total amount in the selected currency. It multiplies the total sum of 'Amount in EUR' by the corresponding 'Conversion Rate' for each currency, effectively converting the total amount to each currency.
+The last part of our measure multiplies the total sum of 'Amount in EUR' by the corresponding 'Conversion Rate' for the selcted currency.
 
 The final step is to incorporate the measure into a card on the dashboard and test it using our slicer.
 
