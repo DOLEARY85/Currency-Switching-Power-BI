@@ -2,7 +2,7 @@
 
 **Introduction**
 
-Financial data integration in Power BI becomes more complex when dealing with global currencies. While handling single-currency data is straightforward, navigating the complexities of multiple currencies requires a different approach. In this blog, we delve into a systematic method for seamless multicurrency display, empowering end users to effortlessly toggle between currencies directly from the dashboard.
+Financial data integration in Power BI becomes more complex when dealing with global currencies. While handling single-currency data is straightforward, navigating the complexities of multiple currencies requires a different approach. In this blog, we explore a systematic method for seamless multicurrency display, empowering end users to effortlessly toggle between currencies directly from the dashboard.
 
 For this example, imagine a scenario where a European company with global offices recieves transactions in multiple currencies. Their default currency for reporting is the Euro (EUR) but every office needs to view the report in their local currency. 
 
@@ -16,13 +16,13 @@ Let’s start with our inputs, first the ‘Financial Data’ table. This exampl
 
 We’ll need to source the conversion rate details from primary currency (EUR) to other currencies. For this example I only need EUR to GBP and EUR to USD.
 
-So, we might end up with a currency table that looks like the below. As EUR is our primary currency and will not need any conversion, it has been given a value of 1.
+Wwe might end up with a currency table that looks like the below. As EUR is our primary currency and will not need any conversion, it has been given a value of 1.
 
 ![image](https://github.com/DOLEARY85/Currency-Switching-Power-BI/assets/126701906/f4dfb4af-25e6-4fbc-8187-c4347bbc7cc3)
 
 Now we have our conversion rates, we next need to create a field in our financial data that converts the 'Amount' column to a single currency. For this we’ll leverage Power Query.
 
-The process involves using merging the 'Currency Table' with the 'Financial Data' through an inner join, linking the 'Currency Code' columns.
+The process involves merging the 'Currency Table' with the 'Financial Data' through an inner join, linking on the 'Currency Code' columns.
 
 ![image](https://github.com/DOLEARY85/Currency-Switching-Power-BI/assets/126701906/4158cbce-1908-4546-9f32-cfb26dddc5f4)
 
