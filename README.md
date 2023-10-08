@@ -50,7 +50,7 @@ First, we introduce a slicer, linked to the ‘Currency Code’ column from the 
 
 Now we can create measures that will use the selection from this slicer and the ‘Amount in EUR’ column we created in Power Query. 
 
-We'll demonstrate this with a simple measure, calculating the total amount of all records:
+To demonstrate this we will create a simple measure, calculating the total amount of all records:
 
     Total Amount Selected Currency = 
     CALCULATE(
