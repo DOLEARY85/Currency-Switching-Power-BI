@@ -18,7 +18,7 @@ We’ll need to source the conversion rate details from primary currency (EUR) t
 
 So, we might end up with a currency table that looks like the below. As EUR is our primary currency and will not need any conversion, it has been given a value of 1.
 
-![image](https://github.com/DOLEARY85/Currency-Switching-Power-BI/assets/126701906/4aeedf62-6a1f-465f-a6f0-3d3c58b66e0f)
+![image](https://github.com/DOLEARY85/Currency-Switching-Power-BI/assets/126701906/cb4e3e14-1273-437f-9862-2e5caf2bc1f5)
 
 Now we have our conversion rates, we next need to create a field in our financial data that converts the 'Amount' column to a single currency. For this we’ll leverage Power Query.
 
@@ -42,7 +42,7 @@ Now we have our ‘Amount’ column all in one currency (‘Amount in EUR’).
 
 **Creating a Dynamic Dashboard Element**
 
-To create a dynamic currency selector that allows the end user to seamlessly switch between currencies, We move to the front end of our dashboard. 
+To create a dynamic currency selector that allows the end user to seamlessly switch between currencies, we move to the front end of our dashboard. 
 
 First, we introduce a slicer, linked to the ‘Currency Code’ column from the ‘Currency Table’, to facilitate the currency switching.
 
