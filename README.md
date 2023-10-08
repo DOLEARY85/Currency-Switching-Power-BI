@@ -18,7 +18,7 @@ We’ll need to source the conversion rate details from primary currency (EUR) t
 
 So, we might end up with a currency table that looks like the below. As EUR is our primary currency and will not need any conversion, it has been given a value of 1.
 
-![image](https://github.com/DOLEARY85/Currency-Switching-Power-BI/assets/126701906/cb4e3e14-1273-437f-9862-2e5caf2bc1f5)
+![image](https://github.com/DOLEARY85/Currency-Switching-Power-BI/assets/126701906/f4dfb4af-25e6-4fbc-8187-c4347bbc7cc3)
 
 Now we have our conversion rates, we next need to create a field in our financial data that converts the 'Amount' column to a single currency. For this we’ll leverage Power Query.
 
