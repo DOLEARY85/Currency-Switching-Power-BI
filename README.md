@@ -16,7 +16,7 @@ Let’s start with our inputs, first the ‘Financial Data’ table. This exampl
 
 We’ll need to source the conversion rate details from primary currency (EUR) to other currencies. For this example I only need EUR to GBP and EUR to USD.
 
-Wwe might end up with a currency table that looks like the below. As EUR is our primary currency and will not need any conversion, it has been given a value of 1.
+We might end up with a currency table that looks like the below. As EUR is our primary currency and will not need any conversion, it has been given a value of 1.
 
 ![image](https://github.com/DOLEARY85/Currency-Switching-Power-BI/assets/126701906/f4dfb4af-25e6-4fbc-8187-c4347bbc7cc3)
 
