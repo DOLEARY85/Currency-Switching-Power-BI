@@ -38,13 +38,13 @@ We finish off by transforming the field type to numeric and round the value to 2
 
 ![image](https://github.com/DOLEARY85/Currency-Switching-Power-BI/assets/126701906/2b4832a9-ab39-4943-9ad3-7a94e295f067)
 
-Now we have our ‘Amount’ column all in one currency (‘Amount in EUR’).
+We now have our ‘Amount’ column all in one currency (‘Amount in EUR’).
 
 **Creating a Dynamic Dashboard Element**
 
 To create a dynamic currency selector that allows the end user to seamlessly switch between currencies, we move to the front end of our dashboard. 
 
-First, we introduce a slicer, linked to the ‘Currency Code’ column from the ‘Currency Table’, to facilitate the currency switching.
+First, we introduce a slicer, linked to the ‘Currency Code’ column from the ‘Currency Table’, this will facilitate the currency switching.
 
 ![image](https://github.com/DOLEARY85/Currency-Switching-Power-BI/assets/126701906/98c59e6e-24ab-416c-b922-b83488bb906b)
 
